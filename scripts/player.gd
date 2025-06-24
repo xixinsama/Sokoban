@@ -9,9 +9,6 @@ var input_direction = Vector2.ZERO
 @export var tilemap: TileMapLayer
 @export var game_manager: Node  # 在编辑器中拖拽GameManager节点到这里
 
-func _ready():
-	snap_to_grid()  # 初始对齐网格
-
 func snap_to_grid():
 	var near: Vector2 = position - Vector2.ONE * GRID_SIZE / 2
 	position = near.snapped(Vector2.ONE * GRID_SIZE) + Vector2.ONE * GRID_SIZE / 2

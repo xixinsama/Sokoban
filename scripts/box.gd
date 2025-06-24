@@ -6,9 +6,6 @@ signal box_moved(new_position)
 const GRID_SIZE = 64  # 网格大小
 @export var tilemap: TileMapLayer
 
-func _ready():
-	snap_to_grid()  # 初始对齐网格
-
 func snap_to_grid():
 	var near: Vector2 = position - Vector2.ONE * GRID_SIZE / 2
 	position = near.snapped(Vector2.ONE * GRID_SIZE) + Vector2.ONE * GRID_SIZE / 2

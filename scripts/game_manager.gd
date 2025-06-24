@@ -14,6 +14,9 @@ var current_state_index = -1 # 当前状态在历史中的索引
 var is_resetting = false # 防止重置时记录状态
 
 func _ready():
+	# 第一步：确保所有对象对齐网格
+	align_all_objects_to_grid()
+	
 	# 从tile_map_layer获取所有目标点位置
 	target_positions = tile_map_layer.get_all_target_positions()
 	
@@ -28,6 +31,12 @@ func _ready():
 	
 	# 保存初始状态到历史
 	save_current_state(true)  # 强制保存初始状态
+
+# 确保所有对象对齐网格
+func align_all_objects_to_grid():
+	player.snap_to_grid()
+	for box in boxes.get_children():
+		box.snap_to_grid()
 
 # 保存当前游戏状态
 func save_current_state(force_save = false):

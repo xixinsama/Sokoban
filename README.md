@@ -9,6 +9,12 @@
 
 - https://www.kenney.nl/assets/sokoban
 
+##操作方式：
+
+上下左右wasd和箭头   
+R重置关卡   
+Z回退操作   
+
 ##包含：
 
 - 开始界面
