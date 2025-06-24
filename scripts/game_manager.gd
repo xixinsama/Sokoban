@@ -1,4 +1,9 @@
 extends Node
+## 游戏管理节点
+## 包含以下，但不包含游戏规则
+## R 和 Z键的功能实现
+## 游戏状态的初始化
+## 游戏胜利条件
 
 @onready var tile_map_layer: TileMapLayer = $"../TileMapLayer"
 @onready var player: PlayerController = $"../Player"
