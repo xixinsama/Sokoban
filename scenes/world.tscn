@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://do7fx0f2ay70x"]
+[gd_scene load_steps=9 format=4 uid="uid://do7fx0f2ay70x"]
 
 [ext_resource type="Script" uid="uid://xmatcc31kd6y" path="res://scripts/game_manager.gd" id="1_71j4m"]
 [ext_resource type="Texture2D" uid="uid://dmyeskugq5bgu" path="res://assets/sokoban_tilesheet.png" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://chuove4bsq6oy" path="res://scenes/box.tscn" id="2_4wyf3"]
 [ext_resource type="Script" uid="uid://cjaxdws10l44i" path="res://scripts/tile_map_layer.gd" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://ding5puft18qs" path="res://scenes/player.tscn" id="3_k0juu"]
+[ext_resource type="Script" uid="uid://mgmbmbnvwwc5" path="res://scripts/camera_2d.gd" id="5_qfnet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("1_nnsk1")
@@ -76,3 +77,7 @@ tilemap = NodePath("../../TileMapLayer")
 position = Vector2(159, 159)
 tilemap = NodePath("../TileMapLayer")
 game_manager = NodePath("../GameManager")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(254, 258)
+script = ExtResource("5_qfnet")
