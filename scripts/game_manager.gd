@@ -4,6 +4,7 @@ extends Node
 ## R 和 Z键的功能实现
 ## 游戏状态的初始化
 ## 游戏胜利条件
+class_name GameManager
 
 @onready var tile_map_layer: TileMapLayer = $"../TileMapLayer"
 @onready var player: PlayerController = $"../Player"
@@ -130,6 +131,7 @@ func apply_state(state: Dictionary):
 		boxes.get_child(i).position = state["box_positions"][i]
 
 # 检查胜利条件
+signal youwin
 func check_win_condition(_pos):
 	boxes_on_target = 0
 	
@@ -141,11 +143,14 @@ func check_win_condition(_pos):
 	# 胜利条件：所有箱子在目标点
 	if boxes_on_target == target_positions.size():
 		print("You Win!")
+		youwin.emit()
 		# 此处可触发胜利画面或下一关
 
 # 处理输入
 func _unhandled_input(event):
 	if event.is_action_pressed("reset"):  # R键
 		reset_level()
+		Records.increment_steps()
 	elif event.is_action_pressed("revert"):  # Z键
 		revert_step()
+		Records.increment_steps()

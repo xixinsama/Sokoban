@@ -22,7 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			zoom += zoom_speed
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			zoom -= zoom_speed
-		zoom = zoom.clamp(Vector2(0.5, 0.5), Vector2(2, 2))
+		zoom = zoom.clamp(Vector2(0.1, 0.1), Vector2(2, 2))
 		if event.is_released():
 			# 位置转化为TilemapLayer可用的形式
 			var click_position: Vector2 = (event.position - windows_size / 2) / zoom + position

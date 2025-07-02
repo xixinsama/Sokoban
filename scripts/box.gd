@@ -13,7 +13,7 @@ func snap_to_grid():
 func try_push(dir: Vector2) -> bool:
 	var target_pos = position + dir * GRID_SIZE
 	
-	# 检测目标位置是否可推动
+	# 检测目标位置是否aadawdasd可推动
 	if tilemap.is_wall(target_pos): 
 		return false
 	
